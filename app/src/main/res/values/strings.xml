@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CoderDojo Event Finder</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_find_event">FindEvent</string>
+</resources>
