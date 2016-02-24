@@ -5,19 +5,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import dryconic.coderdojo.Adapters.ListEventsAdapter;
 import dryconic.coderdojo.Interfaces.StandardActivity;
+import dryconic.coderdojo.Network.AsyncTasks.EventRequest;
+import dryconic.coderdojo.Network.AsyncTasks.RequestListener;
+import dryconic.coderdojo.Network.Response.Events;
 import dryconic.coderdojo.R;
 
 
-public class FindEvent extends AppCompatActivity implements StandardActivity
+public class FindEvent extends AppCompatActivity implements StandardActivity, RequestListener
 {
     Toolbar toolbar;
+    TextView textView;
+    RecyclerView listEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,10 +43,23 @@ public class FindEvent extends AppCompatActivity implements StandardActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        textView = (TextView) findViewById(R.id.title_find);
+
+        listEvents = (RecyclerView) findViewById(R.id.event_list);
+        listEvents.setHasFixedSize(true);
+        listEvents.setLayoutManager(new LinearLayoutManager(this));
+        listEvents.setVisibility(View.GONE);
+
     }
 
     @Override
     public void setListeners()
+    {
+
+    }
+
+    @Override
+    public void getPreferences()
     {
 
     }
@@ -72,7 +95,15 @@ public class FindEvent extends AppCompatActivity implements StandardActivity
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            Log.i("SEARCH", query);
+            new EventRequest(this).execute(query);
+            textView.setText("Coderdojo a " + query);
         }
+    }
+
+    @Override
+    public void onResponse(Events[] codeEvent)
+    {
+        listEvents.setAdapter(new ListEventsAdapter(codeEvent));
+        listEvents.setVisibility(View.VISIBLE);
     }
 }

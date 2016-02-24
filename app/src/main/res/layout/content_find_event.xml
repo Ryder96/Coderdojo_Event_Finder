@@ -13,4 +13,20 @@
     tools:context="dryconic.coderdojo.Activities.FindEvent"
     tools:showIn="@layout/activity_find_event">
 
+    <TextView
+        android:id="@+id/title_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerHorizontal="true"
+        android:text="Coderdojo a ..."/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/event_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/title_find"/>
+
 </RelativeLayout>

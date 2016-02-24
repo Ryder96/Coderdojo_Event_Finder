@@ -27,11 +27,10 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coder dojo"
+        android:text="Coderdojo"
         android:textSize="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,9 +41,10 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Benvenuto ..."
+        android:text="Benvenuto"
         android:textSize="25dp"
         android:layout_above="@+id/menu_layout"
         android:layout_alignStart="@+id/menu_layout"/>

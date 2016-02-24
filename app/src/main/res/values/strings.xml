@@ -2,4 +2,32 @@
     <string name="app_name">CoderDojo Event Finder</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_find_event">FindEvent</string>
+    <string name="title_activity_details_event">DetailsEvent</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit laoreet sem sed gravida. Nam in erat eu justo pellentesque vulputate. Nulla ut erat eu tortor facilisis ornare. Morbi imperdiet sagittis magna id tincidunt. Mauris ullamcorper felis sed sollicitudin imperdiet. Praesent dictum tortor eu porttitor congue. Quisque aliquet maximus dolor, id posuere est mattis non. Suspendisse auctor lorem sapien, ut hendrerit ex molestie ut. Vestibulum nunc velit, auctor et quam auctor, hendrerit eleifend nisi. Etiam semper eu nibh eu elementum. Donec tempor vulputate est vel lobortis. Etiam rutrum rhoncus orci sed pharetra. Quisque eu lacus et nunc accumsan lacinia. Praesent ut iaculis orci. Vestibulum in neque nec velit blandit volutpat.</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Nickname</string>
+    <string name="pref_default_display_name">nickname</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
 </resources>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="dryconic.coderdojo"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="dryconic.coderdojo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -20,16 +24,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="dryconic.coderdojo.Activities.FindEvent"
+            android:name=".Activities.FindEvent"
             android:label="@string/title_activity_find_event"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
+        </activity>
+        <activity
+            android:name=".Activities.DetailsEvent"
+            android:label="@string/title_activity_details_event"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Activities.Settings.SettingsActivity"
+            android:label="@string/title_activity_settings">
         </activity>
     </application>
 

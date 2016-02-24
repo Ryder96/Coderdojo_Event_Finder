@@ -7,5 +7,5 @@ public interface StandardActivity {
 
     void setActivity();
     void setListeners();
-
+    void getPreferences();
 }
